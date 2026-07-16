@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: logistica
+  jackson:
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-unexpected-view-properties: false
+  kafka:
+    bootstrap-servers: 'http://localhost:29092'
+    consumer:
+      group-id: icompras-logistica
+      auto-offset-reset: earliest
+
+icompras:
+  config:
+    kafka:
+      topics:
+        pedidos-faturados: 'icompras.pedidos-faturados'
+        pedidos-enviados: 'icompras.pedidos-enviados'
+
+server:
+  port: 8084
